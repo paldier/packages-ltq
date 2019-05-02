@@ -74,8 +74,8 @@ CMAKE_OPTIONS += \
 	-DPYTHON_INCLUDE_DIR=$(STAGING_DIR)/usr/include/python3.4 \
 	-DPYTHON_LIBRARY=$(STAGING_DIR)/usr/lib/libpython3.4.so
 
-TARGET_CFLAGS+=-flto -I"$(STAGING_DIR)/usr/include/python3.4"
-TARGET_CXXFLAGS+=-DWITH_GPIO -flto
+TARGET_CFLAGS+=-flto -I"$(STAGING_DIR)/usr/include/python3.4" -I"$(TOOLCHAIN_DIR)/include"
+TARGET_CXXFLAGS+=-D_GNU_SOURCE -DWITH_GPIO -flto
 
 define Build/Prepare
 	$(call Build/Prepare/Default)
