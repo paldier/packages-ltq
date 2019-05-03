@@ -37,13 +37,6 @@ endef
 
 include $(INCLUDE_DIR)/cmake.mk
 
-Hooks/Prepare/Post += delete_source_package
-
-define delete_source_package
-	# deleting source package as its filename is ambiguous
-	rm -f $(DL_DIR)/$(PKG_SOURCE)
-endef
-
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/usr/{include,lib}
 	$(CP) $(PKG_INSTALL_DIR)/usr/include/* $(1)/usr/include/
