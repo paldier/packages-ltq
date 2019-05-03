@@ -1,13 +1,11 @@
 --- a/hardware/plugins/PluginManager.cpp
 +++ b/hardware/plugins/PluginManager.cpp
-@@ -385,7 +385,8 @@
- 	void CPluginSystem::DeviceModified(uint64_t ID)
- 	{
- 		std::vector<std::vector<std::string> > result;
--		result = m_sql.safe_query("SELECT HardwareID,Unit FROM DeviceStatus WHERE (ID == %" PRIu64 ")", ID);
+@@ -4,7 +4,7 @@
+ //	Domoticz Plugin System - Dnpwwo, 2016
+ //
+ #ifdef ENABLE_PYTHON
+-
 +#define	__STDC_FORMAT_MACROS
-+		result = m_sql.safe_query("SELECT HardwareID,Unit FROM DeviceStatus WHERE (ID == %" PRIu64 ")", ID);
- 		if (!result.empty())
- 		{
- 			std::vector<std::string> sd = result[0];
-
+ #include <tinyxml.h>
+ #include <inttypes.h>
+ 
